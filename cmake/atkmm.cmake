@@ -34,4 +34,4 @@ install(TARGETS atkmm
 	ARCHIVE DESTINATION "${ARCHIVE_INSTALL_PATH}" COMPONENT bin)
 install(FILES atkmm/atk/atkmm.h DESTINATION "include" COMPONENT dev)
 install(DIRECTORY atkmm/atk/atkmm DESTINATION "include" COMPONENT dev FILES_MATCHING PATTERN "*.h")
-install(FILES atkmm/MSVC_Net2010/atkmm/atkmmconfig.h DESTINATION "include/atkmm" COMPONENT dev)
+install(FILES atkmm/MSVC_Net2010/atkmm/atkmmconfig.h DESTINATION "include" COMPONENT dev)

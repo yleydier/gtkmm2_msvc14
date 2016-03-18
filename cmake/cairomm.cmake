@@ -30,6 +30,6 @@ install(TARGETS cairomm
 	RUNTIME DESTINATION "${RUNTIME_INSTALL_PATH}" COMPONENT bin 
 	LIBRARY DESTINATION "${LIBRARY_INSTALL_PATH}" COMPONENT bin 
 	ARCHIVE DESTINATION "${ARCHIVE_INSTALL_PATH}" COMPONENT bin)
-install(DIRECTORY libcairomm/cairomm DESTINATION "include" COMPONENT dev FILES_MATCHING PATTERN "*.h")
-install(FILES cairomm/MSVC_Net2010/cairomm/cairommconfig.h DESTINATION "include/cairomm" COMPONENT dev)
+install(DIRECTORY cairomm/cairomm DESTINATION "include" COMPONENT dev FILES_MATCHING PATTERN "*.h")
+install(FILES cairomm/MSVC_Net2010/cairomm/cairommconfig.h DESTINATION "include" COMPONENT dev)
 

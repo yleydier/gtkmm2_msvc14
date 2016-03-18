@@ -34,4 +34,4 @@ install(TARGETS pangomm
 	ARCHIVE DESTINATION "${ARCHIVE_INSTALL_PATH}" COMPONENT bin)
 install(FILES pangomm/pango/pangomm.h DESTINATION "include" COMPONENT dev)
 install(DIRECTORY pangomm/pango/pangomm DESTINATION "include" COMPONENT dev FILES_MATCHING PATTERN "*.h")
-install(FILES pangomm/MSVC_Net2010/pangomm/pangommconfig.h DESTINATION "include/pangomm" COMPONENT dev)
+install(FILES pangomm/MSVC_Net2010/pangomm/pangommconfig.h DESTINATION "include" COMPONENT dev)

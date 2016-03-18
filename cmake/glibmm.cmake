@@ -34,4 +34,4 @@ install(TARGETS glibmm
 	ARCHIVE DESTINATION "${ARCHIVE_INSTALL_PATH}" COMPONENT bin)
 install(FILES glibmm/glib/glibmm.h DESTINATION "include" COMPONENT dev)
 install(DIRECTORY glibmm/glib/glibmm DESTINATION "include" COMPONENT dev FILES_MATCHING PATTERN "*.h")
-install(FILES glibmm/MSVC_Net2008/glibmm/glibmmconfig.h DESTINATION "include/glibmm" COMPONENT dev)
+install(FILES glibmm/MSVC_Net2008/glibmm/glibmmconfig.h DESTINATION "include" COMPONENT dev)

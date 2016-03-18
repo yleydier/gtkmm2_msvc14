@@ -54,6 +54,8 @@ include(pangomm)
 include(gdkmm)
 include(gtkmm)
 
+install(FILES src/unistd.h DESTINATION "include" COMPONENT dev)
+
 #####################################
 # CPACK
 #include(InstallRequiredSystemLibraries)

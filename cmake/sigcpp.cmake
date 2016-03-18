@@ -23,5 +23,5 @@ install(TARGETS sigc++
 	LIBRARY DESTINATION "${LIBRARY_INSTALL_PATH}" COMPONENT bin 
 	ARCHIVE DESTINATION "${ARCHIVE_INSTALL_PATH}" COMPONENT bin)
 install(DIRECTORY libsigc++/sigc++ DESTINATION "include" COMPONENT dev FILES_MATCHING PATTERN "*.h")
-install(FILES libsigc++/MSVC_Net2010/sigc++config.h DESTINATION "include/sigc++" COMPONENT dev)
+install(FILES libsigc++/MSVC_Net2010/sigc++config.h DESTINATION "include" COMPONENT dev)
 

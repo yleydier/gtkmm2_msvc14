@@ -30,4 +30,4 @@ install(TARGETS gtkmm
 	ARCHIVE DESTINATION "${ARCHIVE_INSTALL_PATH}" COMPONENT bin)
 install(FILES gtkmm/gtk/gtkmm.h DESTINATION "include" COMPONENT dev)
 install(DIRECTORY gtkmm/gtk/gtkmm DESTINATION "include" COMPONENT dev FILES_MATCHING PATTERN "*.h")
-install(FILES gtkmm/MSVC_Net2008/gtkmm/gtkmmconfig.h DESTINATION "include/gtkmm" COMPONENT dev)
+install(FILES gtkmm/MSVC_Net2008/gtkmm/gtkmmconfig.h DESTINATION "include" COMPONENT dev)

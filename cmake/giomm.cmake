@@ -27,6 +27,6 @@ install(TARGETS giomm
 	LIBRARY DESTINATION "${LIBRARY_INSTALL_PATH}" COMPONENT bin 
 	ARCHIVE DESTINATION "${ARCHIVE_INSTALL_PATH}" COMPONENT bin)
 install(FILES glibmm/gio/giomm.h DESTINATION "include" COMPONENT dev)
-install(DIRECTORY libglibmm/gio/giomm DESTINATION "include" COMPONENT dev FILES_MATCHING PATTERN "*.h")
-install(FILES glibmm/MSVC_Net2008/giomm/giommconfig.h DESTINATION "include/giomm" COMPONENT dev)
+install(DIRECTORY glibmm/gio/giomm DESTINATION "include" COMPONENT dev FILES_MATCHING PATTERN "*.h")
+install(FILES glibmm/MSVC_Net2008/giomm/giommconfig.h DESTINATION "include" COMPONENT dev)
 
