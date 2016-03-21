@@ -23,13 +23,13 @@ add_custom_command(TARGET cairomm PRE_LINK COMMAND
 	$<TARGET_FILE_NAME:cairomm> 
 	${CMAKE_CURRENT_BINARY_DIR}/$<$<BOOL:${CMAKE_BUILD_TYPE}>:${CMAKE_FILES_DIRECTORY}>/cairomm.dir/${CMAKE_CFG_INTDIR}/$<$<BOOL:${CMAKE_BUILD_TYPE}>:cairomm/cairomm/>*.obj)
 set_target_properties(cairomm PROPERTIES LINK_FLAGS "/DEF:\"cairomm.def\"")
-target_link_libraries(cairomm sigc++ cairo)
+target_link_libraries(cairomm sigc cairo)
 
 # install
 install(TARGETS cairomm 
 	RUNTIME DESTINATION "${RUNTIME_INSTALL_PATH}"
 	LIBRARY DESTINATION "${LIBRARY_INSTALL_PATH}"
 	ARCHIVE DESTINATION "${ARCHIVE_INSTALL_PATH}")
-install(DIRECTORY cairomm/cairomm/ DESTINATION "include/cairomm-1.0" FILES_MATCHING PATTERN "*.h" PATTERN "Pax*" EXCLUDE PATTERN "private*" EXCLUDE)
-install(FILES cairomm/MSVC_Net2010/cairomm/cairommconfig.h DESTINATION "include")
+install(DIRECTORY cairomm/cairomm DESTINATION "include/cairomm-1.0" FILES_MATCHING PATTERN "*.h" PATTERN "Pax*" EXCLUDE PATTERN "private*" EXCLUDE)
+install(FILES cairomm/MSVC_Net2010/cairomm/cairommconfig.h DESTINATION "include/cairomm-1.0")
 

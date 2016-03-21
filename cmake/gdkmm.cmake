@@ -26,13 +26,13 @@ add_custom_command(TARGET gdkmm PRE_LINK COMMAND gendef
 	$<TARGET_FILE_NAME:gdkmm> 
 	${CMAKE_CURRENT_BINARY_DIR}/$<$<BOOL:${CMAKE_BUILD_TYPE}>:${CMAKE_FILES_DIRECTORY}>/gdkmm.dir/${CMAKE_CFG_INTDIR}/$<$<BOOL:${CMAKE_BUILD_TYPE}>:gtkmm/gdk/gdkmm/>*.obj)
 set_target_properties(gdkmm PROPERTIES LINK_FLAGS "/DEF:\"gdkmm.def\"")
-target_link_libraries(gdkmm sigc++ glibmm cairomm pangomm glib-2.0 gobject-2.0 gdk-win32-2.0 gdk_pixbuf-2.0 gtk-win32-2.0)
+target_link_libraries(gdkmm sigc glibmm cairomm pangomm glib-2.0 gobject-2.0 gdk-win32-2.0 gdk_pixbuf-2.0 gtk-win32-2.0)
 
 # install
 install(TARGETS gdkmm 
 	RUNTIME DESTINATION "${RUNTIME_INSTALL_PATH}"
 	LIBRARY DESTINATION "${LIBRARY_INSTALL_PATH}"
 	ARCHIVE DESTINATION "${ARCHIVE_INSTALL_PATH}")
-install(FILES gtkmm/gdk/gdkmm.h DESTINATION "include")
-install(DIRECTORY gtkmm/gdk/gdkmm/ DESTINATION "include/gdkmm-2.4" FILES_MATCHING PATTERN "*.h" PATTERN "Pax*" EXCLUDE PATTERN "private*" EXCLUDE)
-install(FILES gtkmm/MSVC_Net2008/gdkmm/gdkmmconfig.h DESTINATION "include")
+install(FILES gtkmm/gdk/gdkmm.h DESTINATION "include/gdkmm-2.4")
+install(DIRECTORY gtkmm/gdk/gdkmm DESTINATION "include/gdkmm-2.4" FILES_MATCHING PATTERN "*.h" PATTERN "Pax*" EXCLUDE PATTERN "private*" EXCLUDE)
+install(FILES gtkmm/MSVC_Net2008/gdkmm/gdkmmconfig.h DESTINATION "include/gdkmm-2.4")

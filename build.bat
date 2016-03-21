@@ -6,7 +6,7 @@ cd buildvc14
 rem cmake -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_VERBOSE_MAKEFILE=on ..
 cmake -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release ..
 echo "Building"
-cmake --config Release --build .
+cmake --build . --config Release
 echo "Packaging"
 cpack -G ZIP
 cd ..

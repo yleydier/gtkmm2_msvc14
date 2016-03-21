@@ -25,13 +25,13 @@ add_custom_command(TARGET atkmm PRE_LINK COMMAND gendef
 	$<TARGET_FILE_NAME:atkmm> 
 	${CMAKE_CURRENT_BINARY_DIR}/$<$<BOOL:${CMAKE_BUILD_TYPE}>:${CMAKE_FILES_DIRECTORY}>/atkmm.dir/${CMAKE_CFG_INTDIR}/$<$<BOOL:${CMAKE_BUILD_TYPE}>:atkmm/atk/atkmm/>*.obj)
 set_target_properties(atkmm PROPERTIES LINK_FLAGS "/DEF:\"atkmm.def\"")
-target_link_libraries(atkmm sigc++ glibmm atk-1.0 glib-2.0 gobject-2.0)
+target_link_libraries(atkmm sigc glibmm atk-1.0 glib-2.0 gobject-2.0)
 
 # install
 install(TARGETS atkmm 
 	RUNTIME DESTINATION "${RUNTIME_INSTALL_PATH}"
 	LIBRARY DESTINATION "${LIBRARY_INSTALL_PATH}"
 	ARCHIVE DESTINATION "${ARCHIVE_INSTALL_PATH}")
-install(FILES atkmm/atk/atkmm.h DESTINATION "include")
-install(DIRECTORY atkmm/atk/atkmm/ DESTINATION "include/atkmm-1.6" FILES_MATCHING PATTERN "*.h" PATTERN "Pax*" EXCLUDE PATTERN "private*" EXCLUDE)
-install(FILES atkmm/MSVC_Net2010/atkmm/atkmmconfig.h DESTINATION "include")
+install(FILES atkmm/atk/atkmm.h DESTINATION "include/atkmm-1.6")
+install(DIRECTORY atkmm/atk/atkmm DESTINATION "include/atkmm-1.6" FILES_MATCHING PATTERN "*.h" PATTERN "Pax*" EXCLUDE PATTERN "private*" EXCLUDE)
+install(FILES atkmm/MSVC_Net2010/atkmm/atkmmconfig.h DESTINATION "include/atkmm-1.6")

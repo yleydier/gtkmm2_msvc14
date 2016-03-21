@@ -19,14 +19,14 @@ add_custom_command(TARGET giomm PRE_LINK COMMAND gendef
 	$<TARGET_FILE_NAME:giomm> 
 	${CMAKE_CURRENT_BINARY_DIR}/$<$<BOOL:${CMAKE_BUILD_TYPE}>:${CMAKE_FILES_DIRECTORY}>/giomm.dir/${CMAKE_CFG_INTDIR}/$<$<BOOL:${CMAKE_BUILD_TYPE}>:glibmm/gio/giomm/>*.obj)
 set_target_properties(giomm PROPERTIES LINK_FLAGS "/DEF:\"giomm.def\"")
-target_link_libraries(giomm sigc++ glibmm glib-2.0 gobject-2.0 gmodule-2.0 gio-2.0)
+target_link_libraries(giomm sigc glibmm glib-2.0 gobject-2.0 gmodule-2.0 gio-2.0)
 
 # install
 install(TARGETS giomm 
 	RUNTIME DESTINATION "${RUNTIME_INSTALL_PATH}"
 	LIBRARY DESTINATION "${LIBRARY_INSTALL_PATH}"
 	ARCHIVE DESTINATION "${ARCHIVE_INSTALL_PATH}")
-install(FILES glibmm/gio/giomm.h DESTINATION "include")
-install(DIRECTORY glibmm/gio/giomm/ DESTINATION "include/giomm-2.4" FILES_MATCHING PATTERN "*.h" PATTERN "Pax*" EXCLUDE PATTERN "private*" EXCLUDE)
-install(FILES glibmm/MSVC_Net2008/giomm/giommconfig.h DESTINATION "include")
+install(FILES glibmm/gio/giomm.h DESTINATION "include/giomm-2.4")
+install(DIRECTORY glibmm/gio/giomm DESTINATION "include/giomm-2.4" FILES_MATCHING PATTERN "*.h" PATTERN "Pax*" EXCLUDE PATTERN "private*" EXCLUDE)
+install(FILES glibmm/MSVC_Net2008/giomm/giommconfig.h DESTINATION "include/giomm-2.4")
 

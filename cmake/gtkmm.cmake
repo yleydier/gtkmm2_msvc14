@@ -21,13 +21,13 @@ add_custom_command(TARGET gtkmm PRE_LINK COMMAND gendef
 	$<TARGET_FILE_NAME:gtkmm> 
 	${CMAKE_CURRENT_BINARY_DIR}/$<$<BOOL:${CMAKE_BUILD_TYPE}>:${CMAKE_FILES_DIRECTORY}>/gtkmm.dir/${CMAKE_CFG_INTDIR}/$<$<BOOL:${CMAKE_BUILD_TYPE}>:gtkmm/gtk/gtkmm/>*.obj)
 set_target_properties(gtkmm PROPERTIES LINK_FLAGS "/DEF:\"gtkmm.def\"")
-target_link_libraries(gtkmm sigc++ glibmm giomm cairomm pangomm atkmm gdkmm glib-2.0 gobject-2.0 gdk-win32-2.0 gtk-win32-2.0)
+target_link_libraries(gtkmm sigc glibmm giomm cairomm pangomm atkmm gdkmm glib-2.0 gobject-2.0 gdk-win32-2.0 gtk-win32-2.0)
 
 # install
 install(TARGETS gtkmm 
 	RUNTIME DESTINATION "${RUNTIME_INSTALL_PATH}"
 	LIBRARY DESTINATION "${LIBRARY_INSTALL_PATH}"
 	ARCHIVE DESTINATION "${ARCHIVE_INSTALL_PATH}")
-install(FILES gtkmm/gtk/gtkmm.h DESTINATION "include")
-install(DIRECTORY gtkmm/gtk/gtkmm/ DESTINATION "include/gtkmm-2.4" FILES_MATCHING PATTERN "*.h" PATTERN "Pax*" EXCLUDE PATTERN "private*" EXCLUDE)
-install(FILES gtkmm/MSVC_Net2008/gtkmm/gtkmmconfig.h DESTINATION "include")
+install(FILES gtkmm/gtk/gtkmm.h DESTINATION "include/gtkmm-2.4")
+install(DIRECTORY gtkmm/gtk/gtkmm DESTINATION "include/gtkmm-2.4" FILES_MATCHING PATTERN "*.h" PATTERN "Pax*" EXCLUDE PATTERN "private*" EXCLUDE)
+install(FILES gtkmm/MSVC_Net2008/gtkmm/gtkmmconfig.h DESTINATION "include/gtkmm-2.4")
