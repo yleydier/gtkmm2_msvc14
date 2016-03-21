@@ -29,9 +29,9 @@ target_link_libraries(atkmm sigc++ glibmm atk-1.0 glib-2.0 gobject-2.0)
 
 # install
 install(TARGETS atkmm 
-	RUNTIME DESTINATION "${RUNTIME_INSTALL_PATH}" COMPONENT bin 
-	LIBRARY DESTINATION "${LIBRARY_INSTALL_PATH}" COMPONENT bin 
-	ARCHIVE DESTINATION "${ARCHIVE_INSTALL_PATH}" COMPONENT bin)
-install(FILES atkmm/atk/atkmm.h DESTINATION "include" COMPONENT dev)
-install(DIRECTORY atkmm/atk/atkmm DESTINATION "include" COMPONENT dev FILES_MATCHING PATTERN "*.h")
-install(FILES atkmm/MSVC_Net2010/atkmm/atkmmconfig.h DESTINATION "include" COMPONENT dev)
+	RUNTIME DESTINATION "${RUNTIME_INSTALL_PATH}"
+	LIBRARY DESTINATION "${LIBRARY_INSTALL_PATH}"
+	ARCHIVE DESTINATION "${ARCHIVE_INSTALL_PATH}")
+install(FILES atkmm/atk/atkmm.h DESTINATION "include")
+install(DIRECTORY atkmm/atk/atkmm DESTINATION "include" FILES_MATCHING PATTERN "*.h" PATTERN "Pax*" EXCLUDE PATTERN "private*" EXCLUDE)
+install(FILES atkmm/MSVC_Net2010/atkmm/atkmmconfig.h DESTINATION "include")

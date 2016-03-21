@@ -54,7 +54,13 @@ include(pangomm)
 include(gdkmm)
 include(gtkmm)
 
-install(FILES src/unistd.h DESTINATION "include" COMPONENT dev)
+install(DIRECTORY gtk-bundle/bin DESTINATION ".")
+install(DIRECTORY gtk-bundle/etc DESTINATION ".")
+install(FILES gtkrc DESTINATION "etc/gtk-2.0")
+install(DIRECTORY gtk-bundle/include DESTINATION ".")
+install(FILES src/unistd.h DESTINATION "include")
+install(DIRECTORY gtk-bundle/lib DESTINATION ".")
+install(DIRECTORY gtk-bundle/share DESTINATION ".")
 
 #####################################
 # CPACK

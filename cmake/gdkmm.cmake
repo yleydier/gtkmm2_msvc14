@@ -30,9 +30,9 @@ target_link_libraries(gdkmm sigc++ glibmm cairomm pangomm glib-2.0 gobject-2.0 g
 
 # install
 install(TARGETS gdkmm 
-	RUNTIME DESTINATION "${RUNTIME_INSTALL_PATH}" COMPONENT bin 
-	LIBRARY DESTINATION "${LIBRARY_INSTALL_PATH}" COMPONENT bin 
-	ARCHIVE DESTINATION "${ARCHIVE_INSTALL_PATH}" COMPONENT bin)
-install(FILES gtkmm/gdk/gdkmm.h DESTINATION "include" COMPONENT dev)
-install(DIRECTORY gtkmm/gdk/gdkmm DESTINATION "include" COMPONENT dev FILES_MATCHING PATTERN "*.h")
-install(FILES gtkmm/MSVC_Net2008/gdkmm/gdkmmconfig.h DESTINATION "include" COMPONENT dev)
+	RUNTIME DESTINATION "${RUNTIME_INSTALL_PATH}"
+	LIBRARY DESTINATION "${LIBRARY_INSTALL_PATH}"
+	ARCHIVE DESTINATION "${ARCHIVE_INSTALL_PATH}")
+install(FILES gtkmm/gdk/gdkmm.h DESTINATION "include")
+install(DIRECTORY gtkmm/gdk/gdkmm DESTINATION "include" FILES_MATCHING PATTERN "*.h" PATTERN "Pax*" EXCLUDE PATTERN "private*" EXCLUDE)
+install(FILES gtkmm/MSVC_Net2008/gdkmm/gdkmmconfig.h DESTINATION "include")

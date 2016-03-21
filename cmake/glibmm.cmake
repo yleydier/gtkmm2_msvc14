@@ -29,9 +29,9 @@ target_link_libraries(glibmm sigc++ glib-2.0 gobject-2.0 gmodule-2.0)
 
 # install
 install(TARGETS glibmm 
-	RUNTIME DESTINATION "${RUNTIME_INSTALL_PATH}" COMPONENT bin 
-	LIBRARY DESTINATION "${LIBRARY_INSTALL_PATH}" COMPONENT bin 
-	ARCHIVE DESTINATION "${ARCHIVE_INSTALL_PATH}" COMPONENT bin)
-install(FILES glibmm/glib/glibmm.h DESTINATION "include" COMPONENT dev)
-install(DIRECTORY glibmm/glib/glibmm DESTINATION "include" COMPONENT dev FILES_MATCHING PATTERN "*.h")
-install(FILES glibmm/MSVC_Net2008/glibmm/glibmmconfig.h DESTINATION "include" COMPONENT dev)
+	RUNTIME DESTINATION "${RUNTIME_INSTALL_PATH}"
+	LIBRARY DESTINATION "${LIBRARY_INSTALL_PATH}"
+	ARCHIVE DESTINATION "${ARCHIVE_INSTALL_PATH}")
+install(FILES glibmm/glib/glibmm.h DESTINATION "include")
+install(DIRECTORY glibmm/glib/glibmm DESTINATION "include" FILES_MATCHING PATTERN "*.h" PATTERN "Pax*" EXCLUDE PATTERN "private*" EXCLUDE)
+install(FILES glibmm/MSVC_Net2008/glibmm/glibmmconfig.h DESTINATION "include")

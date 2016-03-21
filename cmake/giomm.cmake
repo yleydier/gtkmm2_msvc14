@@ -23,10 +23,10 @@ target_link_libraries(giomm sigc++ glibmm glib-2.0 gobject-2.0 gmodule-2.0 gio-2
 
 # install
 install(TARGETS giomm 
-	RUNTIME DESTINATION "${RUNTIME_INSTALL_PATH}" COMPONENT bin 
-	LIBRARY DESTINATION "${LIBRARY_INSTALL_PATH}" COMPONENT bin 
-	ARCHIVE DESTINATION "${ARCHIVE_INSTALL_PATH}" COMPONENT bin)
-install(FILES glibmm/gio/giomm.h DESTINATION "include" COMPONENT dev)
-install(DIRECTORY glibmm/gio/giomm DESTINATION "include" COMPONENT dev FILES_MATCHING PATTERN "*.h")
-install(FILES glibmm/MSVC_Net2008/giomm/giommconfig.h DESTINATION "include" COMPONENT dev)
+	RUNTIME DESTINATION "${RUNTIME_INSTALL_PATH}"
+	LIBRARY DESTINATION "${LIBRARY_INSTALL_PATH}"
+	ARCHIVE DESTINATION "${ARCHIVE_INSTALL_PATH}")
+install(FILES glibmm/gio/giomm.h DESTINATION "include")
+install(DIRECTORY glibmm/gio/giomm DESTINATION "include" FILES_MATCHING PATTERN "*.h" PATTERN "Pax*" EXCLUDE PATTERN "private*" EXCLUDE)
+install(FILES glibmm/MSVC_Net2008/giomm/giommconfig.h DESTINATION "include")
 

@@ -29,9 +29,9 @@ target_link_libraries(pangomm sigc++ glibmm cairomm pango-1.0 pangocairo-1.0 gli
 
 # install
 install(TARGETS pangomm 
-	RUNTIME DESTINATION "${RUNTIME_INSTALL_PATH}" COMPONENT bin 
-	LIBRARY DESTINATION "${LIBRARY_INSTALL_PATH}" COMPONENT bin 
-	ARCHIVE DESTINATION "${ARCHIVE_INSTALL_PATH}" COMPONENT bin)
-install(FILES pangomm/pango/pangomm.h DESTINATION "include" COMPONENT dev)
-install(DIRECTORY pangomm/pango/pangomm DESTINATION "include" COMPONENT dev FILES_MATCHING PATTERN "*.h")
-install(FILES pangomm/MSVC_Net2010/pangomm/pangommconfig.h DESTINATION "include" COMPONENT dev)
+	RUNTIME DESTINATION "${RUNTIME_INSTALL_PATH}"
+	LIBRARY DESTINATION "${LIBRARY_INSTALL_PATH}"
+	ARCHIVE DESTINATION "${ARCHIVE_INSTALL_PATH}")
+install(FILES pangomm/pango/pangomm.h DESTINATION "include")
+install(DIRECTORY pangomm/pango/pangomm DESTINATION "include" FILES_MATCHING PATTERN "*.h" PATTERN "Pax*" EXCLUDE PATTERN "private*" EXCLUDE)
+install(FILES pangomm/MSVC_Net2010/pangomm/pangommconfig.h DESTINATION "include")
