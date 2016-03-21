@@ -33,5 +33,5 @@ install(TARGETS pangomm
 	LIBRARY DESTINATION "${LIBRARY_INSTALL_PATH}"
 	ARCHIVE DESTINATION "${ARCHIVE_INSTALL_PATH}")
 install(FILES pangomm/pango/pangomm.h DESTINATION "include")
-install(DIRECTORY pangomm/pango/pangomm DESTINATION "include" FILES_MATCHING PATTERN "*.h" PATTERN "Pax*" EXCLUDE PATTERN "private*" EXCLUDE)
+install(DIRECTORY pangomm/pango/pangomm/ DESTINATION "include/pangomm-1.4" FILES_MATCHING PATTERN "*.h" PATTERN "Pax*" EXCLUDE PATTERN "private*" EXCLUDE)
 install(FILES pangomm/MSVC_Net2010/pangomm/pangommconfig.h DESTINATION "include")

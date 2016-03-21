@@ -34,5 +34,5 @@ install(TARGETS gdkmm
 	LIBRARY DESTINATION "${LIBRARY_INSTALL_PATH}"
 	ARCHIVE DESTINATION "${ARCHIVE_INSTALL_PATH}")
 install(FILES gtkmm/gdk/gdkmm.h DESTINATION "include")
-install(DIRECTORY gtkmm/gdk/gdkmm DESTINATION "include" FILES_MATCHING PATTERN "*.h" PATTERN "Pax*" EXCLUDE PATTERN "private*" EXCLUDE)
+install(DIRECTORY gtkmm/gdk/gdkmm/ DESTINATION "include/gdkmm-2.4" FILES_MATCHING PATTERN "*.h" PATTERN "Pax*" EXCLUDE PATTERN "private*" EXCLUDE)
 install(FILES gtkmm/MSVC_Net2008/gdkmm/gdkmmconfig.h DESTINATION "include")

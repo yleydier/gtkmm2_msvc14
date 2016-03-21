@@ -33,5 +33,5 @@ install(TARGETS glibmm
 	LIBRARY DESTINATION "${LIBRARY_INSTALL_PATH}"
 	ARCHIVE DESTINATION "${ARCHIVE_INSTALL_PATH}")
 install(FILES glibmm/glib/glibmm.h DESTINATION "include")
-install(DIRECTORY glibmm/glib/glibmm DESTINATION "include" FILES_MATCHING PATTERN "*.h" PATTERN "Pax*" EXCLUDE PATTERN "private*" EXCLUDE)
+install(DIRECTORY glibmm/glib/glibmm/ DESTINATION "include/glibmm-2.4" FILES_MATCHING PATTERN "*.h" PATTERN "Pax*" EXCLUDE PATTERN "private*" EXCLUDE)
 install(FILES glibmm/MSVC_Net2008/glibmm/glibmmconfig.h DESTINATION "include")

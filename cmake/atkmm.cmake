@@ -33,5 +33,5 @@ install(TARGETS atkmm
 	LIBRARY DESTINATION "${LIBRARY_INSTALL_PATH}"
 	ARCHIVE DESTINATION "${ARCHIVE_INSTALL_PATH}")
 install(FILES atkmm/atk/atkmm.h DESTINATION "include")
-install(DIRECTORY atkmm/atk/atkmm DESTINATION "include" FILES_MATCHING PATTERN "*.h" PATTERN "Pax*" EXCLUDE PATTERN "private*" EXCLUDE)
+install(DIRECTORY atkmm/atk/atkmm/ DESTINATION "include/atkmm-1.6" FILES_MATCHING PATTERN "*.h" PATTERN "Pax*" EXCLUDE PATTERN "private*" EXCLUDE)
 install(FILES atkmm/MSVC_Net2010/atkmm/atkmmconfig.h DESTINATION "include")

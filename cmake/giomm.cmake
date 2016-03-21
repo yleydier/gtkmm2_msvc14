@@ -27,6 +27,6 @@ install(TARGETS giomm
 	LIBRARY DESTINATION "${LIBRARY_INSTALL_PATH}"
 	ARCHIVE DESTINATION "${ARCHIVE_INSTALL_PATH}")
 install(FILES glibmm/gio/giomm.h DESTINATION "include")
-install(DIRECTORY glibmm/gio/giomm DESTINATION "include" FILES_MATCHING PATTERN "*.h" PATTERN "Pax*" EXCLUDE PATTERN "private*" EXCLUDE)
+install(DIRECTORY glibmm/gio/giomm/ DESTINATION "include/giomm-2.4" FILES_MATCHING PATTERN "*.h" PATTERN "Pax*" EXCLUDE PATTERN "private*" EXCLUDE)
 install(FILES glibmm/MSVC_Net2008/giomm/giommconfig.h DESTINATION "include")
 
