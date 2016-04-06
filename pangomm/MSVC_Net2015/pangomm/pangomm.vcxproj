@@ -87,7 +87,7 @@
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">pangomm-vc100-1_4</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">pangomm-vc140-1_4</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">pangomm-vc100-d-1_4</TargetName>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">pangomm-vc100-d-1_4</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">pangomm-vc140-d-1_4</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -150,7 +150,7 @@
     <ClCompile>
       <AdditionalOptions>/vd2 %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.;../..;../../pango;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\CoReNum\v4\gtkmm2_msvc14\src;E:\CoReNum\v4\gtkmm2_msvc14\gtk-bundle\include\freetype2;E:\CoReNum\v4\gtkmm2_msvc14\gtk-bundle\lib\glib-2.0\include;E:\CoReNum\v4\gtkmm2_msvc14\gtk-bundle\include\glib-2.0;E:\CoReNum\v4\gtkmm2_msvc14\gtk-bundle\include;E:\CoReNum\v4\gtkmm2_msvc14\libsigc++\MSVC_Net2015;E:\CoReNum\v4\gtkmm2_msvc14\libsigc++;E:\CoReNum\v4\gtkmm2_msvc14\gtk-bundle\include\cairo;.;../..;E:\CoReNum\v4\gtkmm2_msvc14\glibmm\gio;E:\CoReNum\v4\gtkmm2_msvc14\glibmm\glib;E:\CoReNum\v4\gtkmm2_msvc14\glibmm\MSVC_Net2015\glibmm;E:\CoReNum\v4\gtkmm2_msvc14\gtk-bundle\include\atk-1.0;../../pango;E:\CoReNum\v4\gtkmm2_msvc14\gtk-bundle\include\pango-1.0;E:\CoReNum\v4\gtkmm2_msvc14\cairomm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;PANGOMM_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -166,14 +166,15 @@
       <Command>$(SolutionDir)gendef\$(Platform)\$(Configuration)\gendef $(Platform)\$(Configuration)\$(ProjectName).def $(TargetFileName) $(IntDir)*.obj</Command>
     </PreLinkEvent>
     <Link>
-      <AdditionalDependencies>glib-2.0.lib;gobject-2.0.lib;gmodule-2.0.lib;pango-1.0.lib;pangocairo-1.0.lib;sigc-vc100-d-2_0.lib;glibmm-vc100-d-2_4.lib;cairomm-vc100-d-1_0.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)pangomm-vc100-d-1_4.dll</OutputFile>
+      <AdditionalDependencies>glib-2.0.lib;gobject-2.0.lib;gmodule-2.0.lib;pango-1.0.lib;pangocairo-1.0.lib;sigc-vc140-d-2_0.lib;glibmm-vc140-d-2_4.lib;cairomm-vc140-d-1_0.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)pangomm-vc140-d-1_4.dll</OutputFile>
       <ModuleDefinitionFile>$(Platform)\$(Configuration)\$(ProjectName).def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <TargetMachine>MachineX64</TargetMachine>
+      <AdditionalLibraryDirectories>E:\CoReNum\v4\gtkmm2_msvc14\libsigc++\MSVC_Net2015\x64\Debug;E:\CoReNum\v4\gtkmm2_msvc14\gtk-bundle\lib;E:\CoReNum\v4\gtkmm2_msvc14\glibmm\MSVC_Net2015\glibmm\x64\Debug;E:\CoReNum\v4\gtkmm2_msvc14\glibmm\MSVC_Net2015\giomm\x64\Debug;E:\CoReNum\v4\gtkmm2_msvc14\cairomm\MSVC_Net2015\cairomm\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

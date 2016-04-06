@@ -78,6 +78,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <PreLinkEventUseInBuild>true</PreLinkEventUseInBuild>
     <GenerateManifest>true</GenerateManifest>
+    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+    <TargetName>glibmm-vc140-d-2_4</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>Release\</OutDir>
@@ -122,7 +124,7 @@
     <ClCompile>
       <AdditionalOptions>/vd2 %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.;../..;../../glib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\CoReNum\v4\gtkmm2_msvc14\src;E:\CoReNum\v4\gtkmm2_msvc14\gtk-bundle\include\freetype2;E:\CoReNum\v4\gtkmm2_msvc14\gtk-bundle\lib\glib-2.0\include;E:\CoReNum\v4\gtkmm2_msvc14\gtk-bundle\include\glib-2.0;E:\CoReNum\v4\gtkmm2_msvc14\gtk-bundle\include;E:\CoReNum\v4\gtkmm2_msvc14\libsigc++\MSVC_Net2015;E:\CoReNum\v4\gtkmm2_msvc14\libsigc++;E:\CoReNum\v4\gtkmm2_msvc14\gtk-bundle\include\cairo;.;../..;../../glib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;GLIBMM_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -134,16 +136,17 @@
     </ClCompile>
     <PreLinkEvent>
       <Message>Generate glibmm def file</Message>
-      <Command>$(SolutionDir)gendef\$(Configuration)\gendef $(Configuration)\$(ProjectName).def $(TargetFileName) $(IntDir)*.obj</Command>
+      <Command>$(SolutionDir)\$(Platform)\$(Configuration)\gendef $(Platform)\$(Configuration)\$(ProjectName).def $(TargetFileName) $(IntDir)*.obj</Command>
     </PreLinkEvent>
     <Link>
-      <AdditionalDependencies>glib-2.0.lib;gobject-2.0.lib;gmodule-2.0.lib;sigc-vc90-d-2_0.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)glibmm-vc90-d-2_4.dll</OutputFile>
-      <ModuleDefinitionFile>$(Configuration)\$(ProjectName).def</ModuleDefinitionFile>
+      <AdditionalDependencies>glib-2.0.lib;gobject-2.0.lib;gmodule-2.0.lib;sigc-vc140-d-2_0.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)glibmm-vc140-d-2_4.dll</OutputFile>
+      <ModuleDefinitionFile>$(Platform)\$(Configuration)\$(ProjectName).def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
+      <AdditionalLibraryDirectories>E:\CoReNum\v4\gtkmm2_msvc14\libsigc++\MSVC_Net2015\x64\Debug;E:\CoReNum\v4\gtkmm2_msvc14\gtk-bundle\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
